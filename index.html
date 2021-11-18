@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="bg-dark h-100 p-4">
+    <div class="container-fluid d-flex flex-wrap justify-content-between" id="cake-container">
+      <div class="d-flex flex-column align-items-center" id="cake-1">
+        <div class="box-0"></div>
+        <div class="box-1"></div>
+        <div class="box-2"></div>
+        <div class="box-3 text-white d-flex align-items-center justify-content-center">1</div>
+        </div>
+    </div>
+  </body>
+</html>
+<script>
+  var container = document.getElementById("cake-container")
+  var cakeDiv = document.getElementById("cake-1")
+
+  for (var i=2; i<=15; i++){
+    var newCake = cakeDiv.cloneNode(true)
+    newCake.id = "cake-"+i;
+    newCake.getElementsByClassName("box-3")[0].textContent = i
+    container.appendChild(newCake)
+  }
+</script>
